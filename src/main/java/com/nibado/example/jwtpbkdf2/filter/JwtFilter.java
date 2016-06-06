@@ -32,8 +32,8 @@ public class JwtFilter extends GenericFilterBean {
         final String token = authHeader.substring(7); // The part after "Bearer "
 
         try {
-            final Claims claims = util.parseToken(token);
-            request.setAttribute("claims", claims);
+            //final Claims claims = util.parseToken(token);
+            //request.setAttribute("claims", claims);
         }
         catch (final SignatureException e) {
             throw new ServletException("Invalid token.");

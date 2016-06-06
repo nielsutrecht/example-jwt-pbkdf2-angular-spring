@@ -28,9 +28,9 @@ public class JwtUtilTest {
         String adminToken = jwtUtil.createToken(admin);
         String userToken = jwtUtil.createToken(user);
 
-        Claims adminClaims = jwtUtil.parseToken(adminToken);
+        User adminUser = jwtUtil.parseToken(adminToken);
 
-        assertThat(adminClaims.getSubject()).isEqualTo(admin.getEmail());
-        assertThat(adminClaims.get("user", User.class).getEmail()).isEqualTo(admin.getEmail());
+        assertThat(adminUser.getEmail()).isEqualTo(admin.getEmail());
+        //assertThat(adminClaims.get("user", User.class).getEmail()).isEqualTo(admin.getEmail());
     }
 }

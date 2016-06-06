@@ -18,7 +18,7 @@ public class UserService {
     public void init() {
         UserEntity userEntity = userRepository.findByEmail("admin@example.com");
         if(userEntity == null) {
-            userEntity = UserEntity.adminUser("admin@example.com");
+            userEntity = UserEntity.adminUser("admin@example.com", "Admin User");
             userEntity.setPassword(hashUtil.createHash("admin"));
             userRepository.save(userEntity);
         }

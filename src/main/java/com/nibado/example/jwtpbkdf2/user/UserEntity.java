@@ -13,7 +13,8 @@ public class UserEntity {
 
     private String email;
     private String password;
-    private List<String> roles;
+    private String role;
+    private String name;
 
     public UUID getId() {
         return id;
@@ -39,19 +40,28 @@ public class UserEntity {
         this.password = password;
     }
 
-    public List<String> getRoles() {
-        return roles;
+    public String getRole() {
+        return role;
     }
 
-    public void setRoles(List<String> roles) {
-        this.roles = roles;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public static UserEntity adminUser(String email) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static UserEntity adminUser(String email, String name) {
         UserEntity entity = new UserEntity();
         entity.setEmail(email);
+        entity.setName(name);
         entity.setId(UUID.randomUUID());
-        entity.setRoles(Arrays.asList("user", "admin"));
+        entity.setRole("admin");
 
         return entity;
     }

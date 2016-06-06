@@ -1,21 +1,25 @@
 package com.nibado.example.jwtpbkdf2.user;
 
-import java.util.List;
-
 public class User {
     private final String email;
-    private final List<String> roles;
+    private final String role;
+    private final String name;
 
-    public User(String email, List<String> roles) {
+    public User(String email, String name, String role) {
         this.email = email;
-        this.roles = roles;
+        this.role = role;
+        this.name = name;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public List<String> getRoles() {
-        return roles;
+    public String getRole() {
+        return role;
+    }
+
+    public String getName() {
+        return name;
     }
 }
